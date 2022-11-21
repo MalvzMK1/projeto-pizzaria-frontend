@@ -1,0 +1,8 @@
+#home {
+  padding: 24px 48px;
+  background-image: url(../../img/backgorund-home.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 100vh;
+  width: 100vw;
+}

@@ -1,0 +1,45 @@
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+header nav {
+  display: flex;
+  justify-content: space-between;
+  gap: 15px;
+}
+
+header nav .nav-item {
+  color: var(--white-500);
+  font-size: 1.5rem;
+}
+
+header nav .nav-item::after {
+  content: "";
+  display: block;
+  height: 2px;
+  width: 0%;
+  background-color: var(--yellow-500);
+  transition: 400ms all ease-in-out;
+}
+
+header nav .nav-item:hover::after {
+  content: "";
+  display: block;
+  height: 2px;
+  width: 100%;
+  background-color: var(--yellow-500);
+}
+
+header nav .active {
+  color: var(--yellow-500);
+}
+
+header nav .active::after {
+  content: "";
+  display: block;
+  height: 2px;
+  width: 100%;
+  background-color: var(--yellow-500);
+}

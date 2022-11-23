@@ -10,3 +10,7 @@ input, button {
   border: none;
   outline: none;
 }
+
+html {
+  scroll-behavior: smooth;
+}

@@ -20,3 +20,38 @@
   justify-content: flex-start;
   gap: 3rem;
 }
+
+.products-nav {
+  display: flex;
+  justify-content: space-between;
+}
+
+.search-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: fit-content;
+  gap: 0.5rem;
+  width: 40%;
+}
+
+.search-icon {
+  color: var(--white-500);
+  font-size: 3rem;
+}
+
+#product-search {
+  background: none;
+  border-bottom: 1px solid var(--white-500);
+  color: var(--white-500);
+  font-family: "Inter", sans-serif;
+  font-size: 2rem;
+  font-weight: 200;
+  width: 100%;
+}
+
+#product-search::placeholder {
+  font-style: italic;
+  font-weight: 200;
+  font-family: "Inter", sans-serif;
+}

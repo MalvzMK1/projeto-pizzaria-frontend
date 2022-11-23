@@ -9,16 +9,20 @@
   <link rel="stylesheet" href="./assets/css/main.css">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@200;300;400;700&family=Mulish:wght@700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@200;300;400;700&family=Mulish:wght@400;700&display=swap" rel="stylesheet">
+  <script src="https://kit.fontawesome.com/d374dd1618.js" crossorigin="anonymous"></script>
+  <script src="./assets/js/main.js" defer type="module"></script>
 </head>
 <body>
   <main>
     <section id="home">
       <header>
-        <img src="./assets/img/pizzaria-logo.png" alt="Logo da Pizzaria">
+        <a href="#home">
+          <img src="./assets/img/pizzaria-logo.png" alt="Logo da Pizzaria">
+        </a>
         <nav>
-          <a href="#" class="nav-item active">Home</a>
-          <a href="#" class="nav-item">Promoções</a>
+          <a href="#home" class="nav-item active">Home</a>
+          <a href="#discount-section" class="nav-item">Promoções</a>
           <a href="#" class="nav-item">Cardápio</a>
           <a href="#" class="nav-item">Serviços</a>
           <a href="#" class="nav-item">Contate-nos</a>
@@ -27,12 +31,29 @@
       <div class="content-container">
         <div class="right-side-content">
           <div class="text-container">
-            <h1 class="slogan-title">As melhores <br>
-              <span class="text-yellow">Pizzas</span> e <span class="text-orange">Bebidas</span> <br>
+            <h1 class="slogan-title">As melhores
+              <span class="text-yellow">Pizzas</span> e <span class="text-orange">Bebidas</span>
               de São Paulo.</h1>
             <p class="subtitle">Acesse o nosso cardápio para ver os produtos disponíveis.</p>
           </div>
           <a href="#" class="main-button">Ver Produtos</a>
+        </div>
+      </div>
+    </section>
+    <section id="main-content">
+      <div class="discount-container" id="discount-section">
+        <h2 class="section-title">Promoções</h2>
+        <div class="discount-items-container">
+          <div class="item-card">
+            <img src="./assets/img/pizza1.png" alt="Pizza" class="card-image">
+            <div class="card-content-container">
+              <div class="card-upper-content">
+                <span class="product-name">Calabresa</span>
+                <i class="fa-regular fa-heart favorite-button"></i>
+              </div>
+              <span class="card-price">R$ 30,<span class="price-cents">90</span></span>
+            </div>
+          </div>
         </div>
       </div>
     </section>

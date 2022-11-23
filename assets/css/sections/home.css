@@ -1,5 +1,5 @@
 #home {
-  padding: 24px 48px;
+  padding: 1.5rem 3rem;
   background-image: url(../../img/backgorund-home.png);
   background-repeat: no-repeat;
   background-size: cover;
@@ -32,6 +32,7 @@
   color: var(--white-500);
   font-weight: bold;
   font-size: 6rem;
+  width: 50rem;
 }
 
 .subtitle {

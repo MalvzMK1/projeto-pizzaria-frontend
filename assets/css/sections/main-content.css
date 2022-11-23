@@ -11,5 +11,12 @@
   display: flex;
   flex-direction: column;
   align-items: flex-start;
+  overflow: scroll;
 }
 
+.discount-items-container {
+  margin-top: 12px;
+  display: flex;
+  justify-content: flex-start;
+  gap: 3rem;
+}

@@ -13,4 +13,5 @@ body {
   font-family: "Inter", sans-serif;
   color: var(--white-500);
   scroll-behavior: smooth;
+  overflow-x: hidden;
 }

@@ -3,6 +3,8 @@
   width: 100vw;
   min-height: 100vh;
   height: fit-content;
+  display: flex;
+  flex-direction: column;
 }
 
 .discount-container {
@@ -82,4 +84,35 @@
   font-family: 'Inter', sans-serif;
   border-radius: 64px;
   padding: 12px 24px;
+}
+
+#product-filter option {
+  border: none;
+  background-color: var(--yellow-500);
+  color: #FFFFFF;
+}
+
+.type-infos {
+  display: flex;
+  width: 50%;
+  justify-content: space-between;
+  align-items: center;
+  align-self: flex-end;
+  margin: 0 80px;
+}
+
+.product-type-title {
+  font-size: 4rem;
+  font-style: italic;
+  color: white;
+  align-self: center;
+}
+
+.menu-items-container {
+  margin: 16px 8rem;
+  align-self: center;
+  display: grid;
+  grid-template-columns: 25% 25% 25% 25%;
+  gap: 35px;
+  justify-content: center;
 }

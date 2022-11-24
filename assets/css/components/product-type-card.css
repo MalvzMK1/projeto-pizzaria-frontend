@@ -21,18 +21,3 @@
 .selected {
   background-color: var(--yellow-500);
 }
-
-.type-infos {
-  display: flex;
-  width: fit-content;
-  justify-content: center;
-  align-items: center;
-  background: red;
-  gap: 100%;
-}
-
-.product-type-title {
-  font-size: 3rem;
-  font-style: italic;
-  color: white;
-}

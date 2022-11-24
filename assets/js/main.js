@@ -1,5 +1,4 @@
-import listenFavoriteButtons from './modules/favorite-button.js';
-import listenProductTypes from './modules/product-list.js'
+import listenProductTypes from './modules/product-list.js';
+import './modules/product-card.js';
 
-listenFavoriteButtons();
 listenProductTypes();

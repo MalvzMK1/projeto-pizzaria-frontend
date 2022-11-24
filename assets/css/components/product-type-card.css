@@ -1,0 +1,38 @@
+.product-type {
+  background-color: var(--orange-500);
+  width: 400px;
+  height: 250px;
+  color: var(--white-500);
+  font-size: 4rem;
+  font-weight: 700;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  border-radius: 20px;
+  cursor: pointer;
+  transition: all 200ms ease-in-out;
+}
+
+.product-type:hover {
+  filter: brightness(80%);
+}
+
+.selected {
+  background-color: var(--yellow-500);
+}
+
+.type-infos {
+  display: flex;
+  width: fit-content;
+  justify-content: center;
+  align-items: center;
+  background: red;
+  gap: 100%;
+}
+
+.product-type-title {
+  font-size: 3rem;
+  font-style: italic;
+  color: white;
+}

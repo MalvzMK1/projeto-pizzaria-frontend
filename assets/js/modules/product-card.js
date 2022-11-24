@@ -129,7 +129,6 @@ class ProductCard extends HTMLElement {
     favoriteButton.id = 'favorite-button';
 
     favoriteButton.addEventListener('click', (e) => {
-      console.log('teste');
       if (e.target.src.includes('regular'))
         e.target.src = './assets/svg/heart-solid.svg';
       else if (e.target.src.includes('solid'))

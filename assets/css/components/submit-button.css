@@ -1,0 +1,28 @@
+button.submit-button {
+  background-color: var(--yellow-500);
+  padding: 12px 24px;
+  border-radius: 10px;
+  font-size: 1.5rem;
+  font-weight: 700;
+  transition: all 200ms ease-in-out;
+}
+
+button.submit-button:hover {
+  filter: brightness(200%);
+}
+
+button.submit-button:active {
+  animation: pop-up 200ms;
+}
+
+@keyframes pop-up {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.05);
+  }
+  100% {
+    transform: scale(1);
+  }
+}

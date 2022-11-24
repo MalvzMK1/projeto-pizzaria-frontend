@@ -180,8 +180,38 @@
             <a href="#contact-us" class="nav-item active">Contate-nos</a>
           </nav>
         </header>
-        <div class="content-container">
-          
+        <div class="contact-container">
+          <p class="contact-us-message">Para nos sugerir <span class="text-yellow">mudanças</span> ou dirigir <span class="text-yellow">elogios</span>, contate-nos preenchendo os campos a seguir</p>
+          <form id="contact-us-form">
+            <label for="contact-name">Nome</label>
+            <input type="text" name="contact-name" id="contact-name" class="form-input" required>
+            <div class="input-group">
+              <div class="input-infos">
+                <label for="contact-cellphone-number">Celular</label>
+                <input type="tel" name="cellphone-number" id="contact-cellphone-number" class="form-input" required>
+              </div>
+              <div class="input-infos">
+                <label for="contact-phone-number">Telefone</label>
+                <input type="tel" name="phone-number" id="contact-phone-number" class="form-input">
+              </div>
+            </div>
+            <label for="contact-email">E-mail</label>
+            <input type="email" name="email" id="contact-email" class="form-input" required>
+            <label>Tipo de mensagem</label>
+            <div class="message-type-container">
+              <div class="message-type">
+                <input type="radio" name="message-type" id="critic" required>
+                <label for="critic" class="message-type-label">Crítica</label>
+              </div>
+              <div class="message-type">
+                <input type="radio" name="message-type" id="sugestion" required>
+                <label for="sugestion" class="message-type-label">Sugestão</label>
+              </div>
+            </div>
+            <label for="message">Mensagem</label>
+            <textarea name="message" id="message" class="form-input" required></textarea>
+            <button class="submit-button">Enviar</button>
+          </form>
         </div>
       </section>
     </main>

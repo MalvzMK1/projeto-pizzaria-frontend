@@ -6,9 +6,10 @@
   color: #000000;
 }
 
-input, button {
+input, button, textarea {
   border: none;
   outline: none;
+  resize: none;
 }
 
 html {

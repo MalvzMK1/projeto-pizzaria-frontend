@@ -6,10 +6,12 @@
 @import url(./components/section-title.css);
 @import url(./components/product-type-card.css);
 @import url(./components/card-product.css);
+@import url(./components/submit-button.css);
 
 @import url(./sections/home.css);
 @import url(./sections/main-content.css);
 @import url(./sections/services.css);
+@import url(./sections/contact-us.css);
 
 body {
   background-color: var(--black-500);

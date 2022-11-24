@@ -25,11 +25,7 @@ header nav .nav-item::after {
 }
 
 header nav .nav-item:hover::after {
-  content: "";
-  display: block;
-  height: 2px;
   width: 100%;
-  background-color: var(--yellow-500);
 }
 
 header nav .active {
@@ -42,4 +38,10 @@ header nav .active::after {
   height: 2px;
   width: 100%;
   background-color: var(--yellow-500);
+}
+
+@media (max-width: 768px) {
+  header nav .nav-item {
+    display: none;
+  }
 }

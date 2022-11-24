@@ -23,7 +23,7 @@
         <nav>
           <a href="#home" class="nav-item active">Home</a>
           <a href="#discount-section" class="nav-item">Promoções</a>
-          <a href="#" class="nav-item">Cardápio</a>
+          <a href="#products" class="nav-item">Cardápio</a>
           <a href="#" class="nav-item">Serviços</a>
           <a href="#" class="nav-item">Contate-nos</a>
         </nav>
@@ -136,7 +136,7 @@
           </div>
         </div>
       </div>
-      <nav class="products-nav">
+      <nav class="products-nav" id="products">
         <h2 class="section-title">Cardápio</h2>
         <div class="search-container">
           <i class="fa-solid fa-magnifying-glass search-icon"></i>
@@ -144,7 +144,17 @@
         </div>
       </nav>
       <div class="products-types-container">
-        
+        <div class="product-type">Produtos Favoritos</div>
+        <div class="product-type">Pizzas</div>
+        <div class="product-type">Bebidas</div>
+      </div>
+      <div class="type-infos">
+        <span class="product-type-title">Pizza</span>
+        <select name="filters" id="product-filter">
+          <option value="Grande">Grande</option>
+          <option value="Média">Média</option>
+          <option value="Broto">Broto</option>
+        </select>
       </div>
       <div class="menu-items-container">
         

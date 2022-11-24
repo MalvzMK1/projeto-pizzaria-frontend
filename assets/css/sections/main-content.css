@@ -1,12 +1,3 @@
-#main-content {
-  padding: 1.5rem 3rem;
-  width: 100vw;
-  min-height: 100vh;
-  height: fit-content;
-  display: flex;
-  flex-direction: column;
-}
-
 .discount-container {
   display: flex;
   flex-direction: column;

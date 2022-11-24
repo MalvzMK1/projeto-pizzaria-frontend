@@ -1,0 +1,36 @@
+#services {
+  min-height: fit-content;
+}
+
+.services-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 32px;
+  margin: 2rem 0;
+}
+
+.service-card {
+  background-color: var(--orange-500);
+  width: 555px;
+  height: 555px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  border-radius: 20px;
+  box-shadow: rgba(0, 0, 0, 0.25) 0px 25px 20px;
+  transition: all 400ms ease-in-out;
+}
+
+.service-card:hover {
+  transform: scale(1.05);
+  box-shadow: rgba(0, 0, 0, 0.75) 0px 30px 40px;
+}
+
+.service-name {
+  font-size: 2rem;
+  color: var(--white-500);
+  font-weight: 700;
+  font-size: 6rem;
+}

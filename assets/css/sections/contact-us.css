@@ -49,6 +49,7 @@
   width: 100%;
   border-radius: 10px;
   margin: 6px 0 12px 0;
+  transition: all 200ms ease-in-out;
 }
 
 .form-input:focus {

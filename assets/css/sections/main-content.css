@@ -75,12 +75,14 @@
   font-family: 'Inter', sans-serif;
   border-radius: 64px;
   padding: 12px 24px;
+  z-index: 1;
+  outline: none;
 }
 
 #product-filter option {
   border: none;
-  background-color: var(--yellow-500);
-  color: #FFFFFF;
+  background-color: #fff;
+  color: #121212;
 }
 
 .type-infos {

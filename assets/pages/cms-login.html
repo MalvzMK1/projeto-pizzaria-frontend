@@ -12,12 +12,13 @@
       href="https://fonts.googleapis.com/css2?family=Inter:wght@200;300;400;700&family=Mulish:wght@400;700&display=swap"
       rel="stylesheet"
     />
+    <script src="./js/login.js" type="module" defer></script>
   </head>
   <body>
     <header>
       <img src="../img/pizzaria-logo.png" alt="Logo da pizaria" />
     </header>
-    <div class="login-container">
+    <form class="login-container">
       <div class="input-container">
         <label for="admin-email-input">E-mail</label>
         <input
@@ -25,6 +26,7 @@
           name="input-email"
           id="admin-email-input"
           placeholder="Insira o E-mail"
+          required
         />
       </div>
       <div class="input-container">
@@ -34,10 +36,11 @@
           name="input-password"
           id="admin-password-input"
           placeholder="Insira a senha"
+          required
         />
       </div>
-      <button type="button" class="submit-button bg-red-700">Entrar</button>
-    </div>
+      <button type="button" id="admin-login-submit-button" class="submit-button bg-red-700">Entrar</button>
+    </form>
     <img
       src="./img/pizza-background.png"
       alt="Pizza"

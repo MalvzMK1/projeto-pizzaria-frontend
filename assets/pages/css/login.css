@@ -7,12 +7,12 @@
 body {
   background: #121212;
   display: flex;
-  justify-content: center;
+  justify-content: space-evenly;
   align-items: center;
   flex-direction: column;
   width: 100vw;
   height: 100vh;
-  font-family: "Inter";
+  font-family: 'Inter';
 }
 
 .login-container {
@@ -21,9 +21,10 @@ body {
   border: rgba(255, 255, 255, 0.5) solid 1px;
   width: 60%;
   min-width: 400px;
+  min-height: 50vh;
   height: fit-content;
   display: flex;
-  justify-content: center;
+  justify-content: space-evenly;
   align-items: center;
   flex-direction: column;
   padding: 4.5rem;
@@ -44,19 +45,37 @@ body {
 
 .input-container label {
   font-weight: 700;
-  color: #FFFFFF;
+  color: #ffffff;
   font-size: 2.5rem;
 }
 
 .input-container input {
   background: none;
-  border-bottom: 3px solid #AAAAAA;
-  color: #FFFFFF;
+  border-bottom: 3px solid #aaaaaa;
+  color: #ffffff;
   font-size: 1.5rem;
   font-weight: 200;
   margin-top: 1.5rem;
 }
 
 .input-container input::placeholder {
-  color: #AAAAAA;
+  color: #aaaaaa;
+}
+
+@keyframes shake {
+  0% {
+    transform: translateX(-10px);
+  }
+  25% {
+    transform: translateX(10px);
+  }
+  50% {
+    transform: translateX(-5px);
+  }
+  75% {
+    transform: translateX(5px);
+  }
+  100% {
+    transform: translateX(0);
+  }
 }

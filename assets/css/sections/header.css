@@ -1,3 +1,30 @@
+.menu-burger {
+  background-color: #fff;
+  width: 3rem;
+  height: 0.5rem;
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+
+.menu-burger::after,
+.menu-burger::before {
+  content: '';
+  display: block;
+  background-color: #fff;
+  width: 3rem;
+  height: 0.5rem;
+  position: absolute;
+}
+
+.menu-burger::after {
+  margin-top: 1rem;
+}
+
+.menu-burger::before {
+  margin-bottom: 1rem;
+}
+
 header {
   display: flex;
   justify-content: space-between;
@@ -43,5 +70,9 @@ header nav .active::after {
 @media (max-width: 768px) {
   header nav .nav-item {
     display: none;
+  }
+  .menu-burger {
+    display: block;
+    position: fixed;
   }
 }

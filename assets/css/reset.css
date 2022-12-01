@@ -4,6 +4,7 @@
   box-sizing: border-box;
   text-decoration: none;
   color: #000000;
+  overflow-x: hidden;
 }
 
 input, button, textarea {

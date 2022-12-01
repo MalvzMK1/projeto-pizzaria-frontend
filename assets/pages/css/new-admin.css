@@ -1,0 +1,21 @@
+@import url(../../css/reset.css);
+@import url(../../css/root.css);
+
+@import url(./components/body.css);
+@import url(./components/cms-button.css);
+@import url(./components/background-pizza.css);
+@import url(./components/header-cms.css);
+@import url(./components/register-container.css);
+@import url(./components/input-styles.css);
+
+main {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-grow: 1;
+}
+
+.image-input-container {
+  justify-content: flex-end;
+  width: fit-content;
+}

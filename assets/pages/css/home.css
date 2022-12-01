@@ -1,23 +1,10 @@
 @import url(../../css/reset.css);
 @import url(../../css/root.css);
 
-@import url(../css/components/cms-button.css);
-@import url(../css/components/background-pizza.css);
-@import url(../css/components/header-cms.css);
-
-body {
-  background: #121212;
-  display: flex;
-  align-items: center;
-  flex-direction: column;
-  width: 100vw;
-  height: 100vh;
-  padding: 1.5rem 3rem;
-}
-
-body * {
-  font-family: 'Inter', sans-serif;
-}
+@import url(./components/body.css);
+@import url(./components/cms-button.css);
+@import url(./components/background-pizza.css);
+@import url(./components/header-cms.css);
 
 main {
   margin-top: 1rem;
@@ -45,13 +32,13 @@ main::-webkit-scrollbar-thumb {
 
 .column-names th {
   font-weight: 700;
-  border-bottom: 1px solid #FFF;
+  border-bottom: 1px solid #fff;
 }
 
 .column-names th,
 .product-column td {
   height: 150px;
-  color: #FFF;
+  color: #fff;
   font-size: 1.5rem;
   border-spacing: none;
 }

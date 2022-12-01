@@ -1,76 +1,18 @@
 @import url(../../css/reset.css);
 @import url(../../css/root.css);
 
-@import url(../css/components/cms-button.css);
-@import url(../css/components/background-pizza.css);
-@import url(../css/components/header-cms.css);
-
-body {
-  background: #121212;
-  display: flex;
-  align-items: center;
-  flex-direction: column;
-  width: 100vw;
-  height: 100vh;
-  padding: 1.5rem 3rem;
-}
-
-body * {
-  font-family: 'Inter', sans-serif;
-}
+@import url(./components/body.css);
+@import url(./components/cms-button.css);
+@import url(./components/background-pizza.css);
+@import url(./components/header-cms.css);
+@import url(./components/register-container.css);
+@import url(./components/input-styles.css);
 
 main {
   margin-top: 5rem;
   display: flex;
   justify-content: center;
   align-items: center;
-}
-
-.register-container {
-  background-color: rgba(0, 0, 0, 0.8);
-  border: 1px solid rgba(255, 255, 255, 0.5);
-  border-radius: 5px;
-  padding: 3rem 4.25rem;
-  min-width: 62.5rem;
-}
-
-.input-row {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  width: 100%;
-  gap: 3rem;
-}
-
-.input-container {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  width: 100%;
-  margin-top: 1rem;
-}
-
-.image-input-container {
-  display: flex;
-  align-items: center;
-  width: 100%;
-  gap: 2rem;
-}
-
-.input-container label,
-.image-input-container label {
-  color: var(--yellow-200);
-  font-weight: 700;
-  font-size: 2rem;
-}
-
-.register-input {
-  background: none;
-  border-bottom: 2px solid #fff;
-  /* margin-top: 1rem; */
-  width: 100%;
-  font-size: 1.5rem;
-  color: #fff;
 }
 
 .discount-input-container {
@@ -98,16 +40,6 @@ main {
   font-weight: 200;
 }
 
-input[type='image'] {
-  width: 115px;
-  height: 115px;
-  background-color: rgba(255, 255, 255, 0.5);
-  border: 1px solid rgba(255, 255, 255, 0.8);
-  padding: 1rem;
-  object-fit: cover;
-  justify-self: center;
-}
-
 #product-size-select,
 #product-type-select {
   margin-top: 0.5rem;
@@ -122,7 +54,6 @@ input[type='image'] {
 #product-size-select option,
 #product-type-select option {
   border: none;
-  background-color: #FFF;
+  background-color: #fff;
   color: #121212;
 }
-

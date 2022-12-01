@@ -2,7 +2,7 @@
 @import url(../../css/root.css);
 
 @import url(../../css/components/submit-button.css);
-@import url(../css/components/background-pizza.css);
+@import url(./components/background-pizza.css);
 
 body {
   background: #121212;

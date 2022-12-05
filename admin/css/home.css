@@ -1,5 +1,5 @@
-@import url(../../css/reset.css);
-@import url(../../css/root.css);
+@import url(../../assets/css/reset.css);
+@import url(../../assets/css/root.css);
 
 @import url(./components/body.css);
 @import url(./components/cms-button.css);

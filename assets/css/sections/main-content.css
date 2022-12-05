@@ -48,7 +48,7 @@
   background: none;
   border-bottom: 1px solid var(--white-500);
   color: var(--white-500);
-  font-family: "Inter", sans-serif;
+  font-family: 'Inter', sans-serif;
   font-size: 2rem;
   font-weight: 200;
   width: 100%;
@@ -57,7 +57,7 @@
 #product-search::placeholder {
   font-style: italic;
   font-weight: 200;
-  font-family: "Inter", sans-serif;
+  font-family: 'Inter', sans-serif;
 }
 
 .products-types-container {
@@ -109,6 +109,14 @@
   align-self: center;
   display: grid;
   grid-template-columns: 25% 25% 25% 25%;
-  gap: 35px;
   justify-content: center;
+  min-width: fit-content;
+  width: auto;
+}
+
+product-card {
+  margin: 35px;
+  display: flex;
+  justify-content: center;
+  width: fit-content;
 }

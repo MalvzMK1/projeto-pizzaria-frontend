@@ -54,6 +54,7 @@ class ProductCard extends HTMLElement {
 
     .card-image {
       height: 188px;
+      width: 100%;
     }
 
     .card-upper-content {
@@ -78,6 +79,7 @@ class ProductCard extends HTMLElement {
     .product-name {
       font-size: 2rem;
       text-transform: capitalize;
+      text-align: center;
     }
     
     .card-price {

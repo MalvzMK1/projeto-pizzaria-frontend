@@ -1,5 +1,4 @@
 #home {
-  padding: 1.5rem 3rem;
   background-image: url(../../img/backgorund-home.png);
   background-repeat: no-repeat;
   background-size: cover;
@@ -40,4 +39,19 @@
   font-size: 1.7rem;
   font-weight: 100;
   font-style: italic;
+}
+
+@media (max-width: 768px) {
+  .right-side-content {
+    gap: 3rem;
+  }
+
+  .slogan-title {
+    font-size: 3.5rem;
+    width: 100%;
+  }
+
+  .subtitle {
+    font-size: 1.5rem;
+  }
 }

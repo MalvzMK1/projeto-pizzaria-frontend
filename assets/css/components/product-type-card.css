@@ -21,3 +21,11 @@
 .selected {
   background-color: var(--yellow-500);
 }
+
+@media (max-width: 768px) {
+  .product-type {
+    width: 100%;
+    height: fit-content;
+    font-size: 3rem;
+  }
+}

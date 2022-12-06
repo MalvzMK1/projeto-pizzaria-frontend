@@ -26,3 +26,9 @@ button.submit-button:active {
     transform: scale(1);
   }
 }
+
+@media (max-width: 768px) {
+  button.submit-button {
+    width: 100%;
+  }
+}

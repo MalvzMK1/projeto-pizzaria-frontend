@@ -2,6 +2,8 @@ import listenProductTypes from './modules/product-list.js';
 import './modules/product-card.js';
 import { fetchProducts } from './modules/fetchs.js';
 
+listenProductTypes();
+
 const products = await fetchProducts();
 console.log(await products);
 
@@ -16,5 +18,3 @@ products.forEach((productInfo) => {
 
   container.appendChild(productCard);
 });
-
-listenProductTypes();

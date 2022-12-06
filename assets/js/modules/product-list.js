@@ -3,6 +3,7 @@ export default function listenProductTypes () {
   
   productListElements.forEach(element => {
     element.addEventListener('click', () => {
+      console.log('ei');
       if (!element.classList.contains('selected')) {
         productListElements.forEach(element => {
           element.classList.contains('selected') ? element.classList.remove('selected') : false

@@ -25,7 +25,7 @@ const changeProductSizes = (target) => {
   let pizzaSizes = ['Grande', 'Broto'];
   let drinkSizes = ['350ml', '355ml', '400ml', '500ml', '1L', '1,5L'];
 
-  sanitizeSelectOptions()
+  sanitizeSelectOptions();
   if (target.textContent.toLowerCase().includes('pizza')) {
     pizzaSizes.forEach((size) => {
       const sizeOption = document.createElement('option');

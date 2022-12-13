@@ -1,6 +1,6 @@
 button.submit-button {
   background-color: var(--yellow-500);
-  padding: 12px 24px;
+  padding: 1rem 2rem;
   border-radius: 10px;
   font-size: 1.5rem;
   font-weight: 700;

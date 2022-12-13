@@ -9,7 +9,7 @@
 @import url(./components/input-styles.css);
 
 main {
-  margin-top: 5rem;
+  flex-grow: 1;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -56,4 +56,8 @@ main {
   border: none;
   background-color: #fff;
   color: #121212;
+}
+
+.submit-button {
+  margin: 2rem;
 }

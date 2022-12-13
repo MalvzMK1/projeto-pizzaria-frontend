@@ -15,6 +15,14 @@ header nav {
   gap: 12px;
 }
 
+.pizzaria-logo {
+  height: fit-content;
+}
+
+.pizzaria-logo img {
+  height: 100%;
+}
+
 .admin-profile {
   width: fit-content;
   display: flex;
@@ -43,6 +51,7 @@ header nav {
   color: #fff;
   font-weight: 200;
   font-size: 2.25rem;
+  text-transform: capitalize;
 }
 
 .profile-photo,

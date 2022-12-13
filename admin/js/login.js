@@ -27,7 +27,11 @@ submitLoginFormButton.addEventListener('click', async () => {
     const validatedLogin = await validateLogin();
     if (validateLogin) {
       console.log(validatedLogin.data.admin);
-      localStorage.setItem('adminInfos', validatedLogin.data.admin);
+      const adminJSON = validatedLogin.data.admin;
+      adminJSON.token = validatedLogin.data.token;
+      delete adminJSON.senha;
+      console.log(adminJSON);
+      localStorage.setItem('adminInfos', adminJSON);
       error = false;
       location.href = './cms-home.html';
     }

@@ -1,4 +1,6 @@
-import { getAllAdmins } from "./utils/adminFetch";
+import { getAllAdmins } from './utils/adminFetch.js';
+
+console.log(await getAllAdmins());
 
 const emailInput = document.querySelector('#admin-email-input');
 const passwordInput = document.querySelector('#admin-password-input');
@@ -11,18 +13,26 @@ const validateInputs = () => {
   return true;
 };
 
+const getFormValues = () => {
+  return {
+    loginInfos: {
+      email: emailInput.value,
+      password: passwordInput.value,
+    },
+  };
+};
+
 const validateLogin = () => {
-  
-}
+  return true;
+};
 
 submitLoginFormButton.addEventListener('click', () => {
   if (validateInputs()) {
+    console.log(getFormValues());
     if (validateLogin()) {
-
       location.href = './cms-home.html';
     }
-  }
-  else {
+  } else {
     emailInput.style.borderBottom = '3px solid var(--red-500)';
     passwordInput.style.borderBottom = '3px solid var(--red-500)';
     submitLoginFormButton.style.animation = 'shake 500ms ease-in-out';

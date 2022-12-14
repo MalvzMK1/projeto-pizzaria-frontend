@@ -36,23 +36,23 @@ main::-webkit-scrollbar-thumb {
 }
 
 .column-names th,
-.product-column td {
+.product-row td {
   height: 150px;
   color: #fff;
   font-size: 1.5rem;
   border-spacing: none;
 }
 
-.product-column td {
+.product-row td {
   padding: 0.5rem 1rem;
   text-align: center;
 }
 
-.product-column td:first-child {
+.product-row td:first-child {
   border-radius: 10px 0px 0px 10px;
 }
 
-.product-column td:last-child {
+.product-row td:last-child {
   border-radius: 0px 10px 10px 0px;
   border-right: none;
 }
@@ -63,6 +63,26 @@ main::-webkit-scrollbar-thumb {
   object-fit: cover;
 }
 
-tr.product-column:nth-child(odd) {
+tr.product-row:nth-child(odd) {
   background-color: rgba(0, 0, 0, 0.5);
+}
+
+.delete-button {
+  width: 85px;
+  height: 85px;
+  background-color: var(--yellow-500);
+  border-radius: 50%;
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 0 0 5px #121212;
+  bottom: 1rem;
+  right: 1rem;
+}
+
+.delete-button i {
+  font-size: 2rem;
+  color: #fff;
+  text-shadow: 2px 2px 5px #121212;
 }

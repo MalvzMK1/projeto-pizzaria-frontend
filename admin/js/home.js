@@ -1,5 +1,11 @@
-import { getAllProducts } from './utils/integrations/productAxios.js';
+import {
+  deleteDrink,
+  deletePizza,
+  getAllProducts,
+} from './utils/integrations/productAxios.js';
 import { loadAdminProfile } from './utils/loadAdminProfile.js';
+
+const deleteButton = document.querySelector('.delete-button');
 
 loadAdminProfile();
 
@@ -10,13 +16,15 @@ const loadAllProducts = async () => {
     if (item.desconto) {
       item.preco = item.preco * (item.desconto / 100);
     }
-    
+
     const container = document.querySelector('tbody');
 
     const tableRow = document.createElement('tr');
-    tableRow.classList.add('product-column');
+    tableRow.classList.add('product-row');
+    tableRow.setAttribute('id_produto', item.id);
 
     const productType = document.createElement('td');
+    productType.classList.add('product-type');
     const productName = document.createElement('td');
     const productSize = document.createElement('td');
     const productIngredients = document.createElement('td');
@@ -32,7 +40,6 @@ const loadAllProducts = async () => {
     productIngredients.textContent = 'Ingredientes';
     productPrice.textContent = `R$ ${Number(item.preco).toFixed(2)}`;
     productPhoto.src = item.imagem;
-    console.log(productPrice);
 
     productPhotoContainer.appendChild(productPhoto);
     tableRow.appendChild(productType);
@@ -44,5 +51,20 @@ const loadAllProducts = async () => {
     container.appendChild(tableRow);
   });
 };
+
+deleteButton.addEventListener('click', (el) => {
+  deleteButton.style.backgroundColor = 'red';
+  const tableRows = document.querySelectorAll('.product-row');
+  tableRows.forEach((item) => {
+    item.addEventListener('click', async (el) => {
+      const productID = item.getAttribute('id_produto');
+      const productType = item.children.item(0).textContent;
+
+      if (productType.toLowerCase() === 'pizza') await deletePizza(productID);
+      if (productType.toLowerCase() === 'bebida') await deleteDrink(productID);
+      location.reload();
+    });
+  });
+});
 
 loadAllProducts();

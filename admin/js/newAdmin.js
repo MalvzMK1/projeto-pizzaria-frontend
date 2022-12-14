@@ -1,5 +1,3 @@
-// import { getImage } from './utils/imageReader.js';
-
 import { createAdmin } from './utils/integrations/adminAxios.js';
 import { loadAdminProfile } from './utils/loadAdminProfile.js';
 
@@ -63,7 +61,6 @@ document
     if (validateInputs()) {
       const admin = getFormValues();
       if (admin) await createAdmin(admin);
-    }
-    else 
-      alert('Preencha os campos');
+      location.href = './cms-home.html';
+    } else alert('Preencha os campos');
   });

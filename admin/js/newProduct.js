@@ -54,6 +54,20 @@ checkbox.addEventListener('change', () => {
   listenDiscountChecked();
 });
 
+const validateInputs = () => {
+  const productName = document.querySelector('#product-name-input').value;
+  const productType = document.querySelector('#product-type-select').value;
+  const productSize = document.querySelector('#product-size-select').value;
+  const productCategory = document.querySelector(
+    '#product-category-input'
+  ).value;
+  const productPrice = document.querySelector('#product-price-input').value;
+
+  if (productName === '' || productType === '' || productSize === '' || productCategory === '' || productPrice === '')
+    return false
+  return true
+}
+
 const getFormValues = () => {
   const productName = document.querySelector('#product-name-input').value;
   const productType = document.querySelector('#product-type-select').value;
@@ -79,23 +93,27 @@ const getFormValues = () => {
 };
 
 document.querySelector('.submit-button').addEventListener('click', async () => {
-  const product = getFormValues();
-
-  if (product.type === 'pizza') {
-    if (product.category.toLowerCase() === 'salgada') product.type = 1;
-    if (product.category.toLowerCase() === 'doce') product.type = 2;
-    await insertPizza(product);
-  }
-  if (product.type === 'drink') {
-    if (
-      product.category.toLowerCase().includes('alcoolica') ||
-      product.category.toLowerCase().includes('alcoólica')
-    )
-      product.type = 1;
-    if (product.category.toLowerCase() === 'suco') product.type = 2;
-    if (product.category.toLowerCase() === 'refrigerante') product.type = 3;
-    await insertDrink(product);
-  }
+  if (validateInputs()) {
+    const product = getFormValues();
+  
+    if (product.type === 'pizza') {
+      if (product.category.toLowerCase() === 'salgada') product.type = 1;
+      if (product.category.toLowerCase() === 'doce') product.type = 2;
+      await insertPizza(product);
+      location.href = './cms-home.html'
+    }
+    if (product.type === 'drink') {
+      if (
+        product.category.toLowerCase().includes('alcoolica') ||
+        product.category.toLowerCase().includes('alcoólica')
+      )
+        product.type = 1;
+      if (product.category.toLowerCase() === 'suco') product.type = 2;
+      if (product.category.toLowerCase() === 'refrigerante') product.type = 3;
+      await insertDrink(product);
+      location.href = './cms-home.html'
+    }
+  } else alert('Preencha os campos corretamente');
 });
 
 document

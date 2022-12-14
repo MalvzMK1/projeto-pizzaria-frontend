@@ -14,8 +14,8 @@ const validateInputs = () => {
 const validateLogin = async () => {
   try {
     const admin = { email: emailInput.value, password: passwordInput.value };
-    const res = await loginAdmin(admin);
-    return res;
+    const response = await loginAdmin(admin);
+    return response;
   } catch (err) {
     console.log(err.message);
   }
@@ -27,8 +27,11 @@ submitLoginFormButton.addEventListener('click', async () => {
     const validatedLogin = await validateLogin();
     if (validateLogin) {
       error = false;
-      const ID_ADMIN = validatedLogin.data.admin.id;
+      const ID_ADMIN = validatedLogin.admin.id;
+      const token = validatedLogin.token;
+      console.log(validatedLogin.admin);
       localStorage.setItem('ID_ADMIN', ID_ADMIN);
+      localStorage.setItem('ACCESS_TOKEN', ID_ADMIN);
       location.href = './cms-home.html';
     }
     error = true;

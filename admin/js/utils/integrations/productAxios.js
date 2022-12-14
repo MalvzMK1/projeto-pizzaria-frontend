@@ -23,6 +23,13 @@ export const insertPizza = async (pizzaJSON) => {
   return data;
 };
 
+export const deletePizza = async (pizzaID) => {
+  const url = `pizza/${pizzaID}`;
+  const { data } = await api.delete(url);
+
+  return data;
+}
+
 export const insertDrink = async (drinkJSON) => {
   const url = 'bebida';
   const { data } = await api.post(url, {
@@ -37,3 +44,10 @@ export const insertDrink = async (drinkJSON) => {
 
   return data;
 };
+
+export const deleteDrink = async (drinkID) => {
+  const url = `bebida/${drinkID}`;
+  const { data } = await api.delete(url);
+
+  return data;
+}

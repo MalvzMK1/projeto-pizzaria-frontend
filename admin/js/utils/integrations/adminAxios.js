@@ -2,12 +2,12 @@ import { api } from '../../api/api.js';
 
 export const loginAdmin = async (adminInfos) => {
   const url = 'login/admin';
-  const response = await api.post(url, {
+  const { data } = await api.post(url, {
     email: adminInfos.email,
     password: adminInfos.password,
   });
 
-  return response;
+  return data;
 };
 
 export const getAdminInfos = async (adminID) => {

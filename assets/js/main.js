@@ -21,6 +21,19 @@ pizzas.forEach((productInfo) => {
   }
 });
 
+discountPizzas.forEach((item) => {
+  const container = document.querySelector('.discount-items-container');
+
+  const card = document.createElement('product-card');
+  card.setAttribute('name', item.nome);
+  card.setAttribute('price', Number(item.preco).toFixed(2));
+  card.setAttribute('photo', item.imagem);
+  card.setAttribute('type', 'pizza');
+  card.setAttribute('id_produto', item.id);
+
+  container.appendChild(card);
+});
+
 const validateMessageForm = () => {
   const name = document.querySelector('#contact-name').value;
   const cellphoneNumber = document.querySelector(
@@ -66,19 +79,6 @@ const getMessageForm = () => {
   return messageJSON;
 };
 
-discountPizzas.forEach((item) => {
-  const container = document.querySelector('.discount-items-container');
-
-  const card = document.createElement('product-card');
-  card.setAttribute('name', item.nome);
-  card.setAttribute('price', Number(item.preco).toFixed(2));
-  card.setAttribute('photo', item.imagem);
-  card.setAttribute('type', 'pizza');
-  card.setAttribute('id_produto', item.id);
-
-  container.appendChild(card);
-});
-
 document
   .querySelector('#message-submit-button')
   .addEventListener('click', (el) => {
@@ -90,12 +90,3 @@ document
       } else alert('Ocorreu um erro inesperado');
     } else alert('Preencha os campos');
   });
-
-document.querySelectorAll('product-card').forEach(async (item) => {
-  item.addEventListener('click', async (el) => {
-    el.preventDefault();
-    const idProduct = el.target.getAttribute('id_produto');
-    localStorage.setItem('ID_produto', idProduct);
-    console.log(localStorage.getItem('ID_produto'));
-  });
-});

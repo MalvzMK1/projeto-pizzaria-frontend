@@ -16,8 +16,6 @@ export const renderProducts = () => {
 
   sanitizeProductsContainer();
 
-  console.log(type);
-
   if (type.toLowerCase() === 'pizzas') {
     pizzas.forEach((productInfo) => {
       const productCard = document.createElement('product-card');

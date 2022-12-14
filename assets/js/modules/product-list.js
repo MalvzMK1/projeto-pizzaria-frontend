@@ -1,3 +1,4 @@
+import { getPizzas, getDrinks } from '../integrations/productAxios.js';
 import { renderProducts } from '../utils/renderProducts.js';
 
 export default function listenProductTypes() {
@@ -22,29 +23,36 @@ export default function listenProductTypes() {
   });
 }
 
-const changeProductSizes = (target) => {
+const changeProductSizes = async (target) => {
   const sizeSelect = document.querySelector('#size-filter');
-  let pizzaSizes = ['Grande', 'Broto'];
-  let drinkSizes = ['350ml', '355ml', '400ml', '500ml', '1L', '1,5L'];
+  const sizes = new Array();
 
   sanitizeSelectOptions();
   if (target.textContent.toLowerCase().includes('pizza')) {
-    pizzaSizes.forEach((size) => {
-      const sizeOption = document.createElement('option');
-      sizeOption.value = size;
-      sizeOption.classList.add('size-option');
-      sizeOption.textContent = size;
-      sizeSelect.appendChild(sizeOption);
+    const { pizzas } = await getPizzas();
+    pizzas.forEach((item) => {
+      if (!sizes.includes(item.tamanho)) sizes.push(item.tamanho);
     });
   } else if (target.textContent.toLowerCase().includes('bebida')) {
-    drinkSizes.forEach((size) => {
-      const sizeOption = document.createElement('option');
-      sizeOption.value = size;
-      sizeOption.classList.add('size-option');
-      sizeOption.textContent = size;
-      sizeSelect.appendChild(sizeOption);
+    const { bebidas } = await getDrinks();
+    bebidas.forEach((item) => {
+      if (!sizes.includes(item.tamanho)) sizes.push(item.tamanho);
     });
+    // drinkSizes.forEach((size) => {
+    //   const sizeOption = document.createElement('option');
+    //   sizeOption.value = size;
+    //   sizeOption.classList.add('size-option');
+    //   sizeOption.textContent = size;
+    //   sizeSelect.appendChild(sizeOption);
+    // });
   }
+  sizes.forEach((item) => {
+    const sizeOption = document.createElement('option');
+    sizeOption.value = item;
+    sizeOption.classList.add('size-option');
+    sizeOption.textContent = item;
+    sizeSelect.appendChild(sizeOption);
+  });
 };
 
 const sanitizeSelectOptions = () => {

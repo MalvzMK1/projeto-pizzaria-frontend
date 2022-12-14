@@ -2,6 +2,7 @@ import listenProductTypes from './modules/product-list.js';
 import './modules/product-card.js';
 import {
   getDrinks,
+  getPizzaById,
   getPizzas,
   getProducts,
 } from './integrations/productAxios.js';
@@ -16,6 +17,9 @@ listenProductTypes();
 //   console.log(type.textContent);
 // });
 
+const { bebidas } = await getDrinks();
+console.log(bebidas);
+
 const { pizzas } = await getPizzas();
 console.log(pizzas);
 
@@ -26,7 +30,8 @@ pizzas.forEach((productInfo) => {
   productCard.setAttribute('name', productInfo.nome);
   productCard.setAttribute('price', Number(productInfo.preco).toFixed(2));
   productCard.setAttribute('photo', productInfo.imagem);
-  productCard.setAttribute('type', productInfo.tipo_produto);
+  productCard.setAttribute('type', 'pizza');
+  productCard.setAttribute('id_produto', productInfo.id);
 
   container.appendChild(productCard);
 });
@@ -87,3 +92,12 @@ document
       } else alert('Ocorreu um erro inesperado');
     } else alert('Preencha os campos');
   });
+
+document.querySelectorAll('product-card').forEach(async (item) => {
+  item.addEventListener('click', async (el) => {
+    el.preventDefault();
+    const idProduct = el.target.getAttribute('id_produto');
+    localStorage.setItem('ID_produto', idProduct);
+    console.log(localStorage.getItem('ID_produto'));
+  });
+});

@@ -1,3 +1,5 @@
+import { getPizzaById, updatePizza } from '../integrations/productAxios.js';
+
 class ProductCard extends HTMLElement {
   constructor() {
     super();
@@ -6,6 +8,7 @@ class ProductCard extends HTMLElement {
     this.productName = '';
     this.productPrice = '';
     this.productType = '';
+    this.id_produto = '';
   }
 
   connectedCallback() {
@@ -14,7 +17,7 @@ class ProductCard extends HTMLElement {
   }
 
   static get observedAttributes() {
-    return ['photo', 'name', 'price', 'type'];
+    return ['photo', 'name', 'price', 'type', 'id_produto'];
   }
 
   attributeChangedCallback(attribName, oldValue, newValue) {
@@ -22,6 +25,7 @@ class ProductCard extends HTMLElement {
     if (attribName === 'name') this.productName = newValue;
     if (attribName === 'price') this.productPrice = newValue;
     if (attribName === 'type') this.productType = newValue;
+    if (attribName === 'id_produto') this.id_produto = newValue;
   }
 
   styles() {
@@ -130,11 +134,20 @@ class ProductCard extends HTMLElement {
     favoriteButton.classList.add('favorite-button');
     favoriteButton.id = 'favorite-button';
 
-    favoriteButton.addEventListener('click', (e) => {
-      if (e.target.src.includes('regular'))
+    favoriteButton.addEventListener('click', async (e) => {
+      if (e.target.src.includes('regular')) {
         e.target.src = './assets/svg/heart-solid.svg';
-      else if (e.target.src.includes('solid'))
+        const productID = this.id_produto;
+        const { pizzas } = await getPizzaById(productID);
+        pizzas.quantidade_vezes_favorito = pizzas.quantidade_vezes_favorito + 1;
+        await updatePizza(pizzas.id, pizzas);
+      } else if (e.target.src.includes('solid')) {
         e.target.src = './assets/svg/heart-regular.svg';
+        const productID = this.id_produto;
+        const { pizzas } = await getPizzaById(productID);
+        pizzas.quantidade_vezes_favorito = pizzas.quantidade_vezes_favorito - 1;
+        await updatePizza(pizzas.id, pizzas);
+      }
     });
 
     upperContentContainer.appendChild(name);

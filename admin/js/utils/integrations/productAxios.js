@@ -9,7 +9,6 @@ export const getAllProducts = async () => {
 
 export const insertPizza = async (pizzaJSON) => {
   const url = 'pizza';
-  console.log(pizzaJSON);
   const { data } = await api.post(url, {
     nome: pizzaJSON.name,
     imagem:

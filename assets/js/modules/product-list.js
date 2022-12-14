@@ -20,7 +20,6 @@ export default function listenProductTypes() {
 }
 
 const changeProductSizes = (target) => {
-  let productType = document.querySelector('#chosen-product-type').textContent;
   const sizeSelect = document.querySelector('#size-filter');
   let pizzaSizes = ['Grande', 'Broto'];
   let drinkSizes = ['350ml', '355ml', '400ml', '500ml', '1L', '1,5L'];

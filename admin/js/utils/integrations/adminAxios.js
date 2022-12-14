@@ -1,6 +1,4 @@
-const api = axios.create({
-  baseURL: 'http://localhost:8080/v1/',
-});
+import { api } from '../../api/api.js';
 
 export const loginAdmin = async (adminInfos) => {
   const url = 'login/admin';
@@ -12,7 +10,12 @@ export const loginAdmin = async (adminInfos) => {
   return response;
 };
 
-// await loginAdmin({ email: 'zezinho@gmail.com', password: '666' });
+export const getAdminInfos = async (adminID) => {
+  const url = `administrador/${adminID}`;
+  const response = await api.get(url);
+
+  return response;
+};
 
 export const createAdmin = async (adminInfos) => {
   const url = 'administrador';

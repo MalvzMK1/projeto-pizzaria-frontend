@@ -1,4 +1,4 @@
-import { loginAdmin } from './utils/adminAxios.js';
+import { loginAdmin } from './utils/integrations/adminAxios.js';
 
 const emailInput = document.querySelector('#admin-email-input');
 const passwordInput = document.querySelector('#admin-password-input');
@@ -26,13 +26,9 @@ submitLoginFormButton.addEventListener('click', async () => {
   if (validateInputs()) {
     const validatedLogin = await validateLogin();
     if (validateLogin) {
-      console.log(validatedLogin.data.admin);
-      const adminJSON = validatedLogin.data.admin;
-      adminJSON.token = validatedLogin.data.token;
-      delete adminJSON.senha;
-      console.log(adminJSON);
-      localStorage.setItem('adminInfos', adminJSON);
       error = false;
+      const ID_ADMIN = validatedLogin.data.admin.id;
+      localStorage.setItem('ID_ADMIN', ID_ADMIN);
       location.href = './cms-home.html';
     }
     error = true;

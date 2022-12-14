@@ -6,6 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>CMS Novo Produto - Pizzaria Senailicious</title>
     <link rel="stylesheet" href="./css/new-product.css" />
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script src="./js/newProduct.js" type="module" defer></script>
   </head>
   <body>
     <header>
@@ -21,7 +23,11 @@
         >
         <div class="admin-profile">
           <div class="profile-photo">
-            <img src="./img/user.png" alt="Foto de perfil" class="admin-profile-img" />
+            <img
+              src="./img/user.png"
+              alt="Foto de perfil"
+              class="admin-profile-img"
+            />
           </div>
           <span class="admin-name">Nome admin</span>
         </div>
@@ -88,7 +94,7 @@
           <div class="image-input-container">
             <label for="product-ingredients-input">Imagem</label>
             <input
-              type="image"
+              type="file"
               src="./img/images.png"
               alt="Insira a foto do produto"
             />
@@ -126,7 +132,9 @@
             </div>
           </div>
         </div>
-        <button type="button" id="submit-button" class="submit-button">Salvar</button>
+        <button type="button" id="submit-button" class="submit-button">
+          Salvar
+        </button>
       </form>
     </main>
     <img

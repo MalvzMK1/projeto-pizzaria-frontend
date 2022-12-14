@@ -7,6 +7,10 @@ const loadAllProducts = async () => {
   const { produtos } = await getAllProducts();
 
   produtos.forEach(async (item) => {
+    if (item.desconto) {
+      item.preco = item.preco * (item.desconto / 100);
+    }
+    
     const container = document.querySelector('tbody');
 
     const tableRow = document.createElement('tr');

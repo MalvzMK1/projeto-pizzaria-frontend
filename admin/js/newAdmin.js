@@ -1,7 +1,9 @@
 // import { getImage } from './utils/imageReader.js';
 
 import { createAdmin } from './utils/integrations/adminAxios.js';
+import { loadAdminProfile } from './utils/loadAdminProfile.js';
 
+loadAdminProfile();
 // getImage(adminPhotoInput);
 
 const validateInputs = () => {

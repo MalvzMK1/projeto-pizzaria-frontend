@@ -1,4 +1,7 @@
 import { insertDrink, insertPizza } from './utils/integrations/productAxios.js';
+import { loadAdminProfile } from './utils/loadAdminProfile.js';
+
+loadAdminProfile();
 
 const checkbox = document.querySelector('#yes-discount-option');
 

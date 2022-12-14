@@ -16,7 +16,6 @@ listenProductTypes();
 //   console.log(type.textContent);
 // });
 
-
 const { pizzas } = await getPizzas();
 console.log(pizzas);
 
@@ -31,3 +30,60 @@ pizzas.forEach((productInfo) => {
 
   container.appendChild(productCard);
 });
+
+const validateMessageForm = () => {
+  const name = document.querySelector('#contact-name').value;
+  const cellphoneNumber = document.querySelector(
+    '#contact-cellphone-number'
+  ).value;
+  const email = document.querySelector('#contact-email').value;
+  const critic = document.querySelector('#critic');
+  const sugestion = document.querySelector('#sugestion');
+  const message = document.querySelector('#message').value;
+
+  if (name === '' || cellphoneNumber === '' || email === '' || message === '')
+    return false;
+  if (!critic.checked && !sugestion.checked) return false;
+  return true;
+};
+
+const getMessageForm = () => {
+  const name = document.querySelector('#contact-name').value;
+  const cellphoneNumber = document.querySelector(
+    '#contact-cellphone-number'
+  ).value;
+  const phoneNumber = document.querySelector('#contact-phone-number').value;
+  const email = document.querySelector('#contact-email').value;
+
+  const critic = document.querySelector('#critic');
+  const sugestion = document.querySelector('#sugestion');
+  let messageType;
+
+  if (critic.checked) messageType = 2;
+  if (sugestion.checked) messageType = 1;
+
+  const message = document.querySelector('#message').value;
+
+  const messageJSON = {
+    name,
+    cellphoneNumber,
+    phoneNumber,
+    email,
+    messageType,
+    message,
+  };
+
+  return messageJSON;
+};
+
+document
+  .querySelector('#message-submit-button')
+  .addEventListener('click', (el) => {
+    if (validateMessageForm()) {
+      const messageFormJSON = getMessageForm();
+      const response = newMessage(messageFormJSON);
+      if (response) {
+        alert('Mensagem enviada com sucesso!');
+      } else alert('Ocorreu um erro inesperado');
+    } else alert('Preencha os campos');
+  });

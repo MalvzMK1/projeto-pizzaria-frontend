@@ -28,10 +28,10 @@ submitLoginFormButton.addEventListener('click', async () => {
     if (validateLogin) {
       error = false;
       const ID_ADMIN = validatedLogin.admin.id;
-      const token = validatedLogin.token;
+      const ACCESS_TOKEN = validatedLogin.token;
       console.log(validatedLogin.admin);
       localStorage.setItem('ID_ADMIN', ID_ADMIN);
-      localStorage.setItem('ACCESS_TOKEN', ID_ADMIN);
+      localStorage.setItem('ACCESS_TOKEN', ACCESS_TOKEN);
       location.href = './cms-home.html';
     }
     error = true;

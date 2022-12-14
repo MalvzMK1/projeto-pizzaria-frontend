@@ -1,3 +1,4 @@
+import { getMessages } from './utils/integrations/messageAxios.js';
 import {
   deleteDrink,
   deletePizza,
@@ -68,3 +69,6 @@ deleteButton.addEventListener('click', (el) => {
 });
 
 loadAllProducts();
+
+const message = await getMessages();
+console.log(message);

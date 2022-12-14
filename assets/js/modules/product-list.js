@@ -1,8 +1,11 @@
+import { renderProducts } from '../utils/renderProducts.js';
+
 export default function listenProductTypes() {
   let productListElements = document.querySelectorAll('.product-type');
-
+  renderProducts();
   productListElements.forEach((element) => {
     element.addEventListener('click', (el) => {
+      renderProducts();
       changeProductSizes(el.target);
       if (!element.classList.contains('selected')) {
         productListElements.forEach((element) => {

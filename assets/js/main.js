@@ -8,32 +8,17 @@ import {
 } from './integrations/productAxios.js';
 import { newMessage } from './integrations/messageAxios.js';
 
+export const { bebidas } = await getDrinks();
+export const { pizzas } = await getPizzas();
+
 listenProductTypes();
 
-// const type = document.querySelector('.selected');
-
-// type.addEventListener('change', () => {
-//   type.textContent = type.textContent;
-//   console.log(type.textContent);
-// });
-
-const { bebidas } = await getDrinks();
-console.log(bebidas);
-
-const { pizzas } = await getPizzas();
-console.log(pizzas);
+const discountPizzas = new Array();
 
 pizzas.forEach((productInfo) => {
-  const container = document.querySelector('.menu-items-container');
-
-  const productCard = document.createElement('product-card');
-  productCard.setAttribute('name', productInfo.nome);
-  productCard.setAttribute('price', Number(productInfo.preco).toFixed(2));
-  productCard.setAttribute('photo', productInfo.imagem);
-  productCard.setAttribute('type', 'pizza');
-  productCard.setAttribute('id_produto', productInfo.id);
-
-  container.appendChild(productCard);
+  if (productInfo.desconto) {
+    discountPizzas.push(productInfo);
+  }
 });
 
 const validateMessageForm = () => {
@@ -80,6 +65,19 @@ const getMessageForm = () => {
 
   return messageJSON;
 };
+
+discountPizzas.forEach((item) => {
+  const container = document.querySelector('.discount-items-container');
+
+  const card = document.createElement('product-card');
+  card.setAttribute('name', item.nome);
+  card.setAttribute('price', Number(item.preco).toFixed(2));
+  card.setAttribute('photo', item.imagem);
+  card.setAttribute('type', 'pizza');
+  card.setAttribute('id_produto', item.id);
+
+  container.appendChild(card);
+});
 
 document
   .querySelector('#message-submit-button')
